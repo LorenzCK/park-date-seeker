@@ -6,7 +6,6 @@ interface ParkingSpot {
   name: string;
   location: string;
   dailyOccupation: number[];
-  totalAvailability: number;
 }
 
 interface ParkingResultsProps {
@@ -20,24 +19,21 @@ export const ParkingResults = ({ data, startDate, endDate }: ParkingResultsProps
   const mockData: ParkingSpot[] = [
     {
       id: "1",
-      name: "Parcheggio A",
-      location: "Corso Matteotti 22",
+      name: "Downtown Parking",
+      location: "123 Main St",
       dailyOccupation: [80, 75, 90, 85, 70],
-      totalAvailability: 15,
     },
     {
       id: "2",
-      name: "XYZ Parking",
-      location: "Via Marconi 123",
+      name: "Central Park & Drive",
+      location: "456 Park Ave",
       dailyOccupation: [65, 70, 85, 90, 95],
-      totalAvailability: 20,
     },
     {
       id: "3",
-      name: "Park B",
-      location: "Vicolo Garibaldi 32",
+      name: "West Side Garage",
+      location: "789 West St",
       dailyOccupation: [55, 60, 70, 75, 80],
-      totalAvailability: 30,
     },
   ];
 
@@ -59,7 +55,7 @@ export const ParkingResults = ({ data, startDate, endDate }: ParkingResultsProps
                 key={day}
                 className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                {day} maggio
+                Day {day}
               </th>
             ))}
           </tr>
@@ -88,7 +84,7 @@ export const ParkingResults = ({ data, startDate, endDate }: ParkingResultsProps
                         : "bg-green-100 text-green-800"
                     )}
                   >
-                    {occupation/100.0*spot[index].totalAvailability}/{spot[index].totalAvailability} ({occupation}%)
+                    {occupation}%
                   </span>
                 </td>
               ))}
