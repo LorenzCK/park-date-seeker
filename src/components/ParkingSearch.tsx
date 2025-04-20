@@ -18,7 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 
-const cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"];
+const cities = ["Milano", "Firenze", "Torino", "Bologna", "Roma"];
 
 export const ParkingSearch = () => {
   const [selectedCity, setSelectedCity] = useState<string>();
